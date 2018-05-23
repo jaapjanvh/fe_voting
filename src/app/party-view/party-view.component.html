@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <h3>Centered Tabs</h3>
+  <p>To center/justify the tabs and pills, use the .nav-justified class. Note that on screens that are smaller than 768px, the list items are stacked (content will remain centered).</p>
+  <ul class="nav nav-tabs nav-default" >
+    <li *ngFor="let party of parties"><a routerLink="{{party.partyid}}">{{party.partyname}} as {{party.partyid}}</a></li> 
+  </ul>
+  <br>
+</div>
