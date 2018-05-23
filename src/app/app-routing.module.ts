@@ -11,7 +11,7 @@ const routes: Routes = [
       children: [
         { path: '', redirectTo: '/home', pathMatch: 'full' },
         { path: 'home', component: AppComponent },
-        { path: ':partyid', component: MembersComponent }]
+        { path: ':id', component: MembersComponent }]
       }
       ];
 
