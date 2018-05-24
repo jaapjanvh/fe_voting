@@ -1,3 +1,25 @@
-<p>
-  members works!
-</p>
+
+<app-party-view></app-party-view>
+
+<div class="container">
+  
+      <!-- <label><input type="radio" name="optradio">{{member.lastname}}</label> 
+      <button type="button" class="btn btn-primary btn-lg">{{member.lastname}}</button>
+    </div> -->
+    
+
+
+  <div class="list-group" *ngFor="let member of members">
+      <alert></alert>
+      <button type="button" class="list-group-item list-group-item-action" (click)="notifySelection(product)">
+          <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"> -->
+              <div class="d-flex w-100 justify-content-between">
+                <h3 class="mb-1">{{member.lastname}}, {{member.firstletters}} ({{member.firstname}})</h3>
+                <small>{{member.city}}</small> </div>
+                <p class="mb-1">Donec</p>
+              <!-- </a> -->
+      </button>
+    </div>
+
+
+  </div>
