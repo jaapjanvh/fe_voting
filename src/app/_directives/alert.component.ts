@@ -23,6 +23,7 @@ export class AlertComponent {
       }
 
       // add alert to array
+      this.alerts.length = 0;
       this.alerts.push(alert);
     });
   }

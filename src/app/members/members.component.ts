@@ -14,6 +14,9 @@ export class MembersComponent implements OnInit {
 
   members: Member[];
   member: Member;
+  index: number;
+  // ngForOf: NgIterable<T>
+  first: boolean;
 
   constructor(private route: ActivatedRoute,private memberservice: MembersService,private alertService: AlertService) { }
 
@@ -26,9 +29,9 @@ export class MembersComponent implements OnInit {
   }
 
 
-  notifySelection(member: Member) {
-    // member = this.member;
-    this.alertService.success("You have selected " + this.member.lastname );
+  notifySelection(value) {
+    this.member = value;
+    this.alertService.success("You have selected " + this.member.firstname +" " + this.member.lastname );
   }
 
 }

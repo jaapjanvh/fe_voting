@@ -29,6 +29,10 @@ export class AlertService {
     return this.subject.asObservable();
   }
 
+  getAlert2(): Observable<any> {
+    return this.subject.asObservable();
+  }
+
   success(message: string, keepAfterRouteChange = false) {
     this.alert(AlertType.Success, message, keepAfterRouteChange);
   }
