@@ -13,13 +13,15 @@ import { MembersComponent } from './members/members.component';
 import { MembersService }          from './_services/members.service';
 import {AlertService} from './_services/alert.service';
 import {AlertComponent} from './_directives';
+import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PartyViewComponent,
     MembersComponent,
-    AlertComponent
+    AlertComponent,
+    SubmitVoteComponent
   ],
   imports: [
     BrowserModule,

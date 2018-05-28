@@ -18,12 +18,22 @@ export class PartiesService {
 
     /** GET hero by id. Will 404 if id not found */
     getParty(partyid: number): Observable<Party> {
-      return this.http.get<Party>('http://api.hrwebshop.tk/product/' + partyid).pipe(
+      return this.http.get<Party>('http://brambrouwer.com/test' + partyid).pipe(
         tap(_ => this.log(`fetched products id=${partyid}`)),
         catchError(this.handleError<Party>(`getProduct id=${partyid}`))
       );
      
    }
+
+   getParty2 (): Observable<Party[]> {
+    return this.http.get<Party[]>('http://brambrouwer.com/test')
+      .pipe(
+        catchError(this.handleError('getParty2', []))
+      );
+  }
+
+
+
 
 
    getParties (): Observable<Party[]> {

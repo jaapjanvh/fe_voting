@@ -4,7 +4,9 @@ import {catchError, map,tap} from 'rxjs/operators';
 import {Member} from '../_models/member';
 import { MessageService } from './../message.service';
 import { Observable } from 'rxjs/Observable';
+import { Router, NavigationStart } from '@angular/router';
 import { of } from 'rxjs/observable/of';
+import { Subject } from 'rxjs/Subject';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -12,12 +14,16 @@ const httpOptions = {
 @Injectable()
 export class MembersService {
 
-  constructor(private http: HttpClient,private messageService: MessageService) { }
+  member: Member;
+  private subject = new Subject<Member>();
+  private keepAfterRouteChange = false;
+  constructor(private http: HttpClient,private messageService: MessageService,private router: Router) {
+   }
 
-   getProductsOfCategory (partyid: number): Observable<Member[]> {
+   getMembersforParty (partyid: number): Observable<Member[]> {
     return this.http.get<Member[]>('http://brambrouwer.com/party/' + partyid)
       .pipe(
-        catchError(this.handleError('getCategories', []))
+        catchError(this.handleError('getMembersforParty', []))
       );
   }
 

@@ -2,58 +2,20 @@
 <app-party-view></app-party-view>
 
 <div class="container-fluid">
-    
-      <!-- <label><input type="radio" name="optradio">{{member.lastname}}</label> 
-      <button type="button" class="btn btn-primary btn-lg">{{member.lastname}}</button>
-    </div> -->
-<!--     
-
-
-  <div class="list-group col-sm-8 col-md-8" *ngFor="let member of members"   >
-      
-      <button type="button" class="list-group-item list-group-item-action" (click)="notifySelection(member)">
-              <div class="d-flex w-100 justify-content-between">
-                <h3 class="mb-1">{{member.lastname}}, {{member.firstletters}} ({{member.firstname}})</h3>
-                <small>{{member.city}}</small> </div>
-                <p class="mb-1">Donec</p>
-      </button>
-    </div>
-    <div class="container-fluid col-sm-12 col-md-12 ">
-        <form action="/action_page.php">
-          First name:<br>
-          <input type="text" name="firstname" value="Mickey">
-          <br>
-          Last name:<br>
-          <input type="text" name="lastname" value="Mouse">
-          <br><br>
-          <input type="submit" value="Submit">
-        </form>
-    
-    </div>
-    -->
-  
 
   <div class="row" *ngFor="let member of members" >
       <div class="col-xs-7 col-sm-6 col-lg-8">
       
-          <button type="button" class="list-group-item list-group-item-action" (click)="notifySelection(member)">
+          <button type="button" class=" btn-primary list-group-item list-group-item-action" (click)="notifySelection(member)">
               <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"> -->
                   <div class="d-flex w-100 justify-content-between">
-                    <h3 class="mb-1">{{member.lastname}}, {{member.firstletters}} ({{member.firstname}})</h3>
+                    <h3 class="mb-1"><img src="/assets/placeholder_male1.jpg" width="10%"> {{member.order}}. {{member.lastname}}, {{member.firstletters}} ({{member.firstname}})</h3>
                     <small>{{member.city}}</small> </div>
-                    <p class="mb-1">Donec</p>
+                    <!-- <p class="mb-1" *ngFor="let party of parties">{{party.partyname}}</p> -->
+                    <!-- <p class="mb-1" >{{parties[1].partyname}}</p> -->
+                    <p>{{party.partyname}}</p>
                   <!-- </a> -->
           </button></div>
-      <!-- <div class="col-xs-5 col-sm-6 col-lg-4"  ><form action="/action_page.php" *ngIf="member.id ==1">
-        First name:<br>
-        <input type="text" name="firstname" value="{{member.id}}">
-        <br>
-        Last name:<br>
-        <input type="text" name="lastname" value="{{member.lastname}}">
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
-  </div> -->
     </div>
-    <div class="topcorner"><alert></alert></div>
+    <div class="bottomcorner col-xs-5 col-sm-6 col-lg-4"><alert></alert></div>
   </div>
