@@ -18,43 +18,43 @@ export class MembersComponent implements OnInit {
   member: Member;
   parties: Party[];
   party: Party;
+  selectedRow : number;
+  test : number;
 
   constructor(private route: ActivatedRoute,private memberservice: MembersService,private alertService: AlertService,private partiesService: PartiesService) { }
-
+ ngOnchange() {
+   this.selectedRow = null;
+   console.log('testbram');
+ }
   ngOnInit() {
     this.route.paramMap
     // (+) converts string 'id' to a number
       .switchMap((params: ParamMap) => this.memberservice.getMembersforParty(+params.get('partyid')))
       .subscribe((members) => this.members = members);
 
-      this.getTest(1);
    
   }
 
-
-  // getOpportunityByIndex(index: number) {            
-  //   this.parties
-  //   .subscribe( opportunities => {
-  //       this.opportunity = opportunities[index];
-  //       console.log(this.opportunity.title);
-  //    });
-   
-  //  }
-
-   getTest(partyid : number) {
-    this.route.paramMap
-      .switchMap((params: ParamMap) => this.partiesService.getParty2())
-      .subscribe((parties) => this.party = parties[partyid]);
-      // console.log(this.party.partyname);
-   }
+  getPartyname() {
+    this.route.params.subscribe(params => {
+      this.selectedRow = params['partyid']-1
+    });
+  }
  
+   mouseClick(index,value) {
+    this.setClickedRow(index);
+    this.notifySelection(value);
+   }
 
-
-
+   setClickedRow(index){
+    
+    this.selectedRow = index;
+    //  console.log(this.selectedRow);
+  }
 
   notifySelection(value) {
     this.member = value;
-    this.alertService.success(this.member.firstname +" " + this.member.lastname +" (" + this.party.partyname );
+    this.alertService.success(this.member.firstname +" " + this.member.lastname +" (" );
   }
 
 

@@ -1,0 +1,14 @@
+.list-primary:focus {
+    background-color: #444444;
+    opacity: 0.8;
+    color: white;
+    /* border-color: #000000; */
+}
+
+.list-primary.active {
+    background-color: #444444 !important;
+    opacity: 0.8;
+    color: white;
+    /* border-color: #000000; */
+}
+

@@ -1,8 +1,11 @@
 <div class="container-fluid">
   <h3>Partijen</h3>
   <ul class="nav nav-tabs nav-default" >
-    <li *ngFor="let party of parties" routerLinkActive="c-active">
-      <a routerLink="/party/{{party.partyid}}">{{party.partyname}}</a></li> 
+    <li *ngFor="let party of parties; let i = index"  routerLinkActive="c-active" class= "list-primary">
+        <!-- (click)="setClickedRow(i)" -->
+      <a  [class.active]="i == selectedRow" class= "list-primary" routerLink="/party/{{party.partyid}}">
+        {{party.partyname}} </a>
+    </li> 
   </ul>
   <br>
 </div>

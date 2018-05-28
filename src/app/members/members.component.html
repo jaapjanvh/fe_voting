@@ -3,18 +3,14 @@
 
 <div class="container-fluid">
 
-  <div class="row" *ngFor="let member of members" >
+  <div class="row" *ngFor="let member of members ; let i = index" >
       <div class="col-xs-7 col-sm-6 col-lg-8">
-      
-          <button type="button" class=" btn-primary list-group-item list-group-item-action" (click)="notifySelection(member)">
-              <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"> -->
-                  <div class="d-flex w-100 justify-content-between">
+          <!-- <button  type="button" (click)="setClickedRow(i)" [class.active]="i == selectedRow" class=" btn-primary list-group-item list-group-item-action" (click)="notifySelection(member)"> -->
+              <button  type="button" (click)="mouseClick(i,member)" [class.active]="i == selectedRow" class=" btn-primary list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
                     <h3 class="mb-1"><img src="/assets/placeholder_male1.jpg" width="10%"> {{member.order}}. {{member.lastname}}, {{member.firstletters}} ({{member.firstname}})</h3>
                     <small>{{member.city}}</small> </div>
-                    <!-- <p class="mb-1" *ngFor="let party of parties">{{party.partyname}}</p> -->
-                    <!-- <p class="mb-1" >{{parties[1].partyname}}</p> -->
-                    <p>{{party.partyname}}</p>
-                  <!-- </a> -->
+                    <!-- <p>{{party.partyname}}</p> -->
           </button></div>
     </div>
     <div class="bottomcorner col-xs-5 col-sm-6 col-lg-4"><alert></alert></div>
