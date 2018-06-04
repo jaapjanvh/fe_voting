@@ -15,32 +15,12 @@ export class PartiesService {
   constructor(private http: HttpClient,private messageService: MessageService) {
   }
 
-
-    /** GET hero by id. Will 404 if id not found */
-    getParty(partyid: number): Observable<Party> {
-      return this.http.get<Party>('http://brambrouwer.com/test' + partyid).pipe(
-        tap(_ => this.log(`fetched products id=${partyid}`)),
-        catchError(this.handleError<Party>(`getProduct id=${partyid}`))
-      );
-     
-   }
-
-   getParty2 (): Observable<Party[]> {
-    return this.http.get<Party[]>('http://brambrouwer.com/test')
-      .pipe(
-        catchError(this.handleError('getParty2', []))
-      );
-  }
-
-
-
-
-
    getParties (): Observable<Party[]> {
-    return this.http.get<Party[]>('http://brambrouwer.com/test')
+    return this.http.get<Party[]>('http://brambrouwer.com/api/parties')
       .pipe(
         catchError(this.handleError('getCategories', []))
       );
+      
   }
 
 

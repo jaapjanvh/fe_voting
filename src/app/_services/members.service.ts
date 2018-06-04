@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { Router, NavigationStart } from '@angular/router';
 import { of } from 'rxjs/observable/of';
 import { Subject } from 'rxjs/Subject';
+import {Party} from '../_models/party';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -15,16 +16,24 @@ const httpOptions = {
 export class MembersService {
 
   member: Member;
+  party: Party;
+  parties: Party[];
   private subject = new Subject<Member>();
   private keepAfterRouteChange = false;
   constructor(private http: HttpClient,private messageService: MessageService,private router: Router) {
    }
 
    getMembersforParty (partyid: number): Observable<Member[]> {
-    return this.http.get<Member[]>('http://brambrouwer.com/party/' + partyid)
+    return this.http.get<Member[]>('http://brambrouwer.com/api/party/' + partyid)
       .pipe(
         catchError(this.handleError('getMembersforParty', []))
       );
+  }
+    getParty (): Observable<Party[]> {
+      return this.http.get<Party[]>('http://brambrouwer.com/api/parties')
+        .pipe(
+          catchError(this.handleError('getCategories', []))
+        );   
   }
 
    /**

@@ -25,7 +25,5 @@ export class PartyViewComponent implements OnInit {
     .subscribe(parties => this.parties = parties);
   }
 
-  
-
 
 }
