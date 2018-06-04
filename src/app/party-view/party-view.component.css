@@ -12,3 +12,10 @@
     /* border-color: #000000; */
 }
 
+.topcorner{
+    position:fixed;
+    top:10px;
+    margin: auto;
+    height: 100%;
+    right: 10px; 
+ }

@@ -1,18 +1,7 @@
 <div class="container">
-        <h2>Are you sure you want to vote for:</h2>
-        <form action="/action_page.php">
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" name="remember"> Remember me</label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        <h2>Are you sure you want to vote for: {{member.firstname}} {{member.lastname}}</h2>
+        <button type="button" class="btn btn-danger" (click)= "backClicked()">No, go back</button>  <button type="button" class="btn btn-success">YES</button>
+
+
       </div>
       

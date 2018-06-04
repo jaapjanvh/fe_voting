@@ -18,7 +18,7 @@ export class PartiesService {
    getParties (): Observable<Party[]> {
     return this.http.get<Party[]>('http://brambrouwer.com/api/parties')
       .pipe(
-        catchError(this.handleError('getCategories', []))
+        catchError(this.handleError('getParties', []))
       );
       
   }

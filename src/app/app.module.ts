@@ -12,6 +12,7 @@ import { MessageService }       from './message.service';
 import { MembersComponent } from './members/members.component';
 import { MembersService }          from './_services/members.service';
 import {AlertService} from './_services/alert.service';
+import { VoteService }          from './_services/vote.service';
 import {AlertComponent} from './_directives';
 import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
 
@@ -29,7 +30,7 @@ import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [PartiesService,MessageService,MembersService,AlertService],
+  providers: [PartiesService,MessageService,MembersService,AlertService,VoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

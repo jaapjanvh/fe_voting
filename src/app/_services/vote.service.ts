@@ -4,7 +4,7 @@ import {Member} from '../_models/member';
 
 @Injectable()
 export class VoteService {
-  member : Member;
+  member : Member = new Member();
   party : Party;
   constructor() { }
 
