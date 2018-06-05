@@ -16,4 +16,11 @@ export class VoteService {
     return this.member;
   }
 
+  setParty(party) {
+    this.party = party;
+  }
+
+  getParty() {
+    return this.party;
+  }
 }

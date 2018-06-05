@@ -15,6 +15,7 @@ import {AlertService} from './_services/alert.service';
 import { VoteService }          from './_services/vote.service';
 import {AlertComponent} from './_directives';
 import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
+import { SubmittedComponent } from './submitted/submitted.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
     PartyViewComponent,
     MembersComponent,
     AlertComponent,
-    SubmitVoteComponent
+    SubmitVoteComponent,
+    SubmittedComponent
   ],
   imports: [
     BrowserModule,

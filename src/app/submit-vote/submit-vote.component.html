@@ -1,7 +1,28 @@
-<div class="container">
+<!-- <div class="container">
         <h2>Are you sure you want to vote for: {{member.firstname}} {{member.lastname}}</h2>
-        <button type="button" class="btn btn-danger" (click)= "backClicked()">No, go back</button>  <button type="button" class="btn btn-success">YES</button>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+        <button type="button" class="btn btn-danger" (click)= "MouseClick(member)">No, go back</button>  <button type="button" class="btn btn-success disabled">YES</button>
 
 
       </div>
-      
+       -->
+
+      <div class="container">
+      <div class="jumbotron">
+        <h3>Are you sure you want to vote for:</h3>
+          <h1 class="display-4">{{member.firstname}} {{member.lastname}}  </h1>
+          <hr class="my-4">
+          <p class="lead">If you are sure, please check the checkbox:</p>
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="active = !active"> <label class="form-check-label" for="exampleCheck1">By selecting this checkbox you agree to 123</label>
+          <br><div *ngIf="active"><button type="button" class="btn btn-success" routerLink="/submitted" [queryParams]="{active: active}" >YES</button>
+            </div>
+          <hr class="my-4">
+          <p>If you want to select someone else, you can go back:</p>
+          <p class="lead">
+              <button type="button" class="btn btn-danger" (click)= "MouseClick(member)">No, go back</button>
+          </p>
+        </div>
+        </div>

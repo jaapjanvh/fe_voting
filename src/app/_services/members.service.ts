@@ -15,7 +15,7 @@ const httpOptions = {
 @Injectable()
 export class MembersService {
 
-  member: Member;
+  member: Member = new Member();
   party: Party;
   parties: Party[];
   private subject = new Subject<Member>();
@@ -35,6 +35,15 @@ export class MembersService {
           catchError(this.handleError('getCategories', []))
         );   
   }
+
+  setMember(member) {
+    this.member = member;
+  }
+
+  getMember() {
+    return this.member;
+  }
+
 
    /**
    * Handle Http operation that failed.
