@@ -16,8 +16,9 @@
           <h1 class="display-4">{{member.firstname}} {{member.lastname}}  </h1>
           <hr class="my-4">
           <p class="lead">If you are sure, please check the checkbox:</p>
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="active = !active"> <label class="form-check-label" for="exampleCheck1">By selecting this checkbox you agree to 123</label>
-          <br><div *ngIf="active"><button type="button" class="btn btn-success" routerLink="/submitted" [queryParams]="{active: active}" >YES</button>
+          <input type="checkbox" class="form-check-input" id="exampleCheck2" (click)="setActive()" > <label class="form-check-label" for="exampleCheck2">By selecting this checkbox you agree to 123</label>
+          <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="active = !active"> <label class="form-check-label" for="exampleCheck1">By selecting this checkbox you agree to 123</label> -->
+          <br><div *ngIf="active"><button type="button" class="btn btn-success"routerLink="/submitted">YES</button>
             </div>
           <hr class="my-4">
           <p>If you want to select someone else, you can go back:</p>

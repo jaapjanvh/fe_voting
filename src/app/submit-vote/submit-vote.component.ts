@@ -40,14 +40,10 @@ export class SubmitVoteComponent implements OnInit {
     this._location.back();
 }
 
-// setActive(){
-//   if (this.active == 'disabled') {
-//   this.active = 'active'; 
-//   }
-//   else {
-//     this.active = 'disabled'
-//   }
-// }
+setActive(){
+  this.active = !this.active;
+  // console.log('click');
+}
 
 
 

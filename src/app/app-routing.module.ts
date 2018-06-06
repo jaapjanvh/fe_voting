@@ -17,7 +17,8 @@ const routes: Routes = [
         { path: 'home', component: PartyViewComponent },
         { path: 'party/:partyid', component: MembersComponent },
         { path: 'vote',component: SubmitVoteComponent},
-        {path: 'submitted',component: SubmittedComponent}]
+        {path: 'submitted',component: SubmittedComponent},
+        {path: '**', redirectTo: '/home'}]
       }
       ];
 

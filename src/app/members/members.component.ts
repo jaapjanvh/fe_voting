@@ -33,6 +33,7 @@ export class MembersComponent implements OnInit {
     private partiesService: PartiesService,
     private voteService: VoteService) { }
   ngOnInit() {
+    console.log(this.route);
     this.checkNotify();
     this.route.paramMap
     // (+) converts string 'id' to a number
@@ -44,11 +45,6 @@ export class MembersComponent implements OnInit {
         this.getParty();
         this.selectedRow = null;
     });
-
-    
-    // console.log('Bram');
-    console.log(this.memberservice.getMember().id);
-    
 
   }
 
@@ -73,14 +69,14 @@ export class MembersComponent implements OnInit {
     if (this.memberservice.getMember().id != undefined) {
       this.member = this.memberservice.getMember();
         this.notifySelection(this.member);
-        console.log('test');
+        // console.log('test');
     }
   }
 
   notifySelection(value) {
     this.member = value;
-    console.log(value);
-    console.log("hallootjes");
+    // console.log(value);
+    // console.log("hallootjes");
     this.alertService.success(this.member.firstname +" " + this.member.lastname +" (" + this.party.partyname +")" );
   }
 
