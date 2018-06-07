@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Party} from '../_models/party';
-import {Member} from '../_models/member';
+import { Party } from '../_models/party';
+import { Member } from '../_models/member';
 
 @Injectable()
 export class VoteService {
-  member : Member = new Member();
-  party : Party;
+  member: Member = new Member();
+  party: Party;
   constructor() { }
 
   setMember(member) {

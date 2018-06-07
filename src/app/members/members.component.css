@@ -11,13 +11,15 @@
  }
 
  .btn-primary:focus {
-    background-color: #5cb85c;
+    /* background-color: #5cb85c; */
+    background-color: #31708f;
     opacity: 0.8;
     border-color: #000000;
 }
 
 .btn-primary.active {
-    background-color: #5cb85c !important;
+    /* background-color: #5cb85c !important; */
+    background-color: #31708f !important;
     opacity: 0.8;
     /* border-color: #000000; */
 }

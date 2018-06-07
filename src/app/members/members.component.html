@@ -1,22 +1,26 @@
-
-<app-party-view></app-party-view>
+<app-party-view>
+</app-party-view>
 
 <div class="container-fluid">
-    
-  <input [(ngModel)]="searchText" placeholder="search text goes here">
-    
-  <div class="row" *ngFor="let member of members; let i = index" >
-      <div class="col-xs-7 col-sm-6 col-lg-8">
-        <button  type="button" (click)="mouseClick(i,member)" [class.active]="i == selectedRow" class=" btn-primary list-group-item list-group-item-action">
-          <div class="d-flex w-100 justify-content-between">
-            <h3 class="mb-1"><img src="/assets/placeholder_male1.jpg" width="10%"> {{member.order}}. {{member.lastname}}, {{member.firstletters}} ({{member.firstname}})</h3>
-              <small>{{member.city}}</small> </div>
-                <p>{{party.partyname}}</p> 
-                               
-          </button>
-       
+
+  <!-- <input [(ngModel)]="searchText" placeholder="search text goes here"> -->
+
+  <div class="row" *ngFor="let member of members; let i = index">
+    <div class="col-xs-7 col-sm-6 col-lg-8">
+      <button type="button" (click)="mouseClick(i,member)" [class.active]="i == selectedRow" class=" btn-primary list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h3 class="mb-1">
+            <img src="/assets/placeholder_male1.jpg" width="10%"> {{member.order}}. {{member.lastname}}, {{member.firstletters}} ({{member.firstname}})</h3>
+          <small>{{member.city}}</small>
         </div>
-        <!-- <div class="topcorner col-xs-5 col-sm-6 col-lg-4"><img src="/assets/{{party.img}}" ></div>  -->
+        <p>{{party.partyname}}</p>
+
+      </button>
+
     </div>
-    <div class="bottomcorner col-xs-5 col-sm-6 col-lg-4"><alert></alert></div>
+    <!-- <div class="topcorner col-xs-5 col-sm-6 col-lg-4"><img src="/assets/{{party.img}}" ></div>  -->
   </div>
+  <div class="bottomcorner col-xs-5 col-sm-6 col-lg-4">
+    <alert></alert>
+  </div>
+</div>

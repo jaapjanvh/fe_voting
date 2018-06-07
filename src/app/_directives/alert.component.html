@@ -3,10 +3,31 @@
   <a class="close" (click)="removeAlert(alert)">&times;</a>
 </div> -->
 
-<div *ngFor="let alert of alerts" class="{{ cssClass(alert) }} alert-dismissable well well-lg">
-    <a class="close" (click)="removeAlert(alert)">&times;</a>
+<!-- <div *ngFor="let alert of alerts" class="{{ cssClass(alert) }} alert-dismissable well well-lg">
+  <a class="close" (click)="removeAlert(alert)">&times;</a>
   <div class="d-flex w-100 justify-content-between">
-      <img src= "assets/warning-sign-icon.png" width="10%"><h3 class="mb-1"> You have currently selected <b>{{alert.message}}</b></h3></div>
-<button type="button" class="btn btn-primary btn-responsive" routerLink="/vote">Click here to submit your vote</button>
+    <img src="assets/warning-sign-icon.png" style="width:20%; float:left;">
+    <span>
+      <h3 class="mb-1"> You have currently selected
+        <b>{{alert.message}}</b>
+      </h3>
+    </span>
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary btn-responsive" routerLink="/vote" style="float:right;">Click here to submit your vote</button>
 
+</div> -->
+
+<div class="panel panel-info vertical-center" *ngFor="let alert of alerts">
+  <a class="close" (click)="removeAlert(alert)">&times;</a>
+  <div class="panel-heading">
+    <h3>Current selection:</h3>
+  </div>
+  <div class="panel-body" style="text-align: center;">
+    <h3 >
+      <b>{{alert.message}}</b>
+    </h3>
+    <br>
+    <button type="button" class="btn btn-primary btn-block btn-lg" routerLink="/vote">Click here to submit your vote</button>
+  </div>
 </div>

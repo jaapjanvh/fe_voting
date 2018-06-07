@@ -5,6 +5,7 @@ import { MembersComponent } from './members/members.component';
 import { PartyViewComponent } from './party-view/party-view.component';
 import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
 import { SubmittedComponent } from './submitted/submitted.component';
+import { StartpageComponent} from './startpage/startpage.component';
 
 
 
@@ -13,12 +14,13 @@ const routes: Routes = [
       path: '',
       component: AppComponent,
       children: [
-        { path: '', redirectTo: '/home', pathMatch: 'full' },
+        { path: '', redirectTo: '/start', pathMatch: 'full' },
+        { path: 'start', component: StartpageComponent },
         { path: 'home', component: PartyViewComponent },
         { path: 'party/:partyid', component: MembersComponent },
         { path: 'vote',component: SubmitVoteComponent},
         {path: 'submitted',component: SubmittedComponent},
-        {path: '**', redirectTo: '/home'}]
+        {path: '**', redirectTo: '/start'}]
       }
       ];
 
