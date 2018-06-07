@@ -18,8 +18,11 @@ export class SubmittedComponent implements OnInit {
 
   ngOnInit() {
     // Observable.interval(10000).takeWhile(() => true).subscribe(() => this.redirectBack());
-    this.sub = Observable.interval(5000)
-      .subscribe((val) => { this.redirectBack(); });
+    // this.sub = Observable.interval(5000)
+    //   .subscribe((val) => { this.redirectBack(); });
+      setTimeout((router: Router) => {
+        this.router.navigate(['start']);
+    }, 5000); 
   }
 
 
