@@ -6,7 +6,7 @@ import { PartyViewComponent } from './party-view/party-view.component';
 import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
 import { SubmittedComponent } from './submitted/submitted.component';
 import { StartpageComponent} from './startpage/startpage.component';
-
+import { AdminpageComponent} from './adminpage/adminpage.component';
 
 
 const routes: Routes = [
@@ -20,6 +20,7 @@ const routes: Routes = [
         { path: 'party/:partyid', component: MembersComponent },
         { path: 'vote',component: SubmitVoteComponent},
         {path: 'submitted',component: SubmittedComponent},
+        {path: 'admin/home',component: AdminpageComponent},
         {path: '**', redirectTo: '/start'}]
       }
       ];

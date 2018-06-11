@@ -27,7 +27,7 @@
     <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="active = !active"> <label class="form-check-label" for="exampleCheck1">By selecting this checkbox you agree to 123</label> -->
     <br>
     <div *ngIf="active">
-      <button type="button" class="btn btn-success" routerLink="/submitted">YES</button>
+      <button type="button" class="btn btn-success" routerLink="/submitted" (click)="voteForCandidate()">YES</button>
     </div>
     <hr class="my-4">
     <p>If you want to select someone else, you can go back:</p>

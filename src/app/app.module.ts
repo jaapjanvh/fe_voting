@@ -17,6 +17,7 @@ import { AlertComponent } from './_directives';
 import { SubmitVoteComponent } from './submit-vote/submit-vote.component';
 import { SubmittedComponent } from './submitted/submitted.component';
 import { StartpageComponent } from './startpage/startpage.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { StartpageComponent } from './startpage/startpage.component';
     AlertComponent,
     SubmitVoteComponent,
     SubmittedComponent,
-    StartpageComponent
+    StartpageComponent,
+    AdminpageComponent
   ],
   imports: [
     BrowserModule,
