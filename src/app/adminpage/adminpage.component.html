@@ -1,7 +1,33 @@
-<p>
+<!-- <p>
   {{votes}}
-</p>
+</p> -->
+<div class="container">
 
-<p>
-  votesssss
-</p>
+  <!-- <input [(ngModel)]="searchText" placeholder="search text goes here"> -->
+<!-- <div  *ngFor="let test of test123; let i = index">
+  <p>{{test[0]}} {{test[1]}}</p>
+</div> -->
+  <div class="row" *ngFor="let party of parties; let i = index">
+    <div class="col-xs-7 col-sm-6 col-lg-8">
+      <button type="button" class=" btn-primary list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h3 class="mb-1"> 
+            <img src="/assets/{{party.img}}" width="10%">  {{party.partyname}}</h3>
+            <div class="rightttt col-xs-5 col-sm-6 col-lg-4"><h4>Number of Votes: {{test123[party.partyid][1]}}</h4></div>
+            <!-- <div  *ngFor="let test of test123; let r = index">
+              
+            <div *ngIf="test[{{party.id] >= 0">
+              <p>{{test[0]}} {{test[1]}}</p>
+            </div>
+</div> -->
+            <!-- {{ getVotesPerParty(party.partyid) }} -->
+            <!-- {{getVotesPerParty(party)}} -->
+        
+        </div>
+
+      </button>
+
+    </div>
+    <!-- <div class="topcorner col-xs-5 col-sm-6 col-lg-4"><img src="/assets/{{party.img}}" ></div>  -->
+  </div>
+</div>
