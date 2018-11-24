@@ -1,0 +1,25 @@
+
+FROM node:latest
+
+RUN apt-get update && apt-get install -y vim
+
+EXPOSE 4200
+
+RUN adduser test
+WORKDIR /usr/src/app
+RUN chmod 777 /usr/src/app
+COPY . /usr/src/app
+
+RUN npm -v
+RUN node -v
+
+RUN mkdir /home/node/.npm-global
+ENV PATH=/home/node/.npm-global/bin:$PATH
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+WORKDIR /usr/src/app/server
+
+RUN npm install -g @angular/cli@1.6.0
+RUN npm install package.json
+RUN apt-get update
+
+RUN ng serve
